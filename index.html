@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<base target="_blank">
+<base>
+<style>
+
+@import url(http://fonts.googleapis.com/css?family=Chau+Philomene+One);
+@import url(stack.css);
+@import url(poly.css);
+
+</style>
+<body class="overview">
+<script src="d3.v2.js"></script>
+
+<section>
+<h1 class="blue">Designing a Scalable Crowdsourcing Platform</h1>
+<h2><a href="http://vanpe.lt">Chris Van Pelt</a><div class="grey">@vanpelt {<a class="white" href="http://crowdflower.com/">crowdflower.com</a>, <a href="mailto:vanpelt@crowdflower.com">vanpelt@crowdflower.com</a>}</div></h2>
+</section>
+
+<section>
+  <ul>
+    <li>Context</li>
+    <li>Tools</li>
+    <li class="orange">Quality</li>
+    <li class="green">Cost</li>
+    <li class="purple">Speed</li>
+    <li>Future</li>
+  </ul>
+  <h2>Agenda</h2>
+</section>
+
+<section>
+  <h1>Context</h1>
+  <h2>What is Crowdsourcing?</h2>
+</section>
+
+<section style="background:url(wikipedia.png)">
+  
+</section>
+
+<section style="background:url(kickstarter.png)">
+  
+</section>
+
+<section style="background:url(threadless.png)">
+  
+</section>
+
+<section style="background:url(recaptcha.png)">
+  
+</section>
+
+<section>
+  <h1>Microtasks</h1>
+  <h2><span class="blue">Online</span> tasks, requiring little to no domain specific <span class="purple">knowledge</span>, that take a few minutes to complete.</h2>
+</section>
+
+<section style="background-image: url(bomb.png); background-position:95% 20%">
+  <h1>Content <br/>Moderation</h1>
+  <h2>Does this image meet the following requirements?</h2>
+</section>
+
+<section>
+  <h1>Content Analysis</h1>
+  <h2>Does this tweet mention <span class="mcd">M</span>cDonalds in a positive light?</h2>
+</section>
+
+<section style="background-image: url(back_pain.png)">
+  <h1>Content Generation</h1>
+  <h2 class="shadow">What's a good question about back pain?</h2>
+</section>
+
+<section style="background-image: url(laplet.png); background-position:95% 20%">
+  <h1>Categorization</h1>
+  <h2>What category does this product belong to?</h2>
+</section>
+
+<section style="background-image: url(closed.png); background-position:top left">
+  <h1 class="shadow">Verification</h1>
+  <h2 class="shadow">Is this business still open, and what's their phone number?</h2>
+</section>
+
+<section>
+  <h1>Tools</h1>
+  <h2>Units, CML and Aggregation</h2>
+</section>
+
+<section>
+  <ul>
+    <li>Rows in a <span class="blue">CSV</span></li>
+    <li>Items in an <span class="blue">XML/RSS</span> feed</li>
+    <li><span class="blue">JSON</span> hashes POSTed to the API</li>
+  </ul>
+  <h2>Units</h2>
+</section>
+
+<section>
+  <h2>Simple CML</h2>
+  <pre><code class="html">
+&lt;img src="{{url}}" /&gt;
+&lt;cml:checkbox label="Is the image appropriate?" 
+  default="no" value="yes" validates="required" /&gt;
+  </code></pre>
+  <span class="updown">↳</span>
+  <img src="appropriate.png" class="shadow" />
+</section>
+
+<section>
+  <h2>Special CML</h2>
+  <pre><code class="html">
+&lt;img src="{{url}}" /&gt;
+&lt;cml:ratings label="How attractive is this young man" 
+  from="Hot" to="Not" /&gt;
+  </code></pre>
+  <span class="updown">↳</span>
+  <img src="attractive.png" class="shadow" />
+</section>
+
+<section>
+      <pre style="float:right;width:800px"><code class="html">
+  &lt;cml:checkboxes label="Choose category"
+    aggregation="agg_3" /&gt;
+    
+    &lt;cml:checkbox label="Tablet" /&gt;
+    &lt;cml:checkbox label="Laptop" /&gt;
+    &lt;cml:checkbox label="PC" /&gt;
+    ...
+    
+  &lt;/cml:checkboxes&gt;
+      </code></pre>
+  <ul>
+    <li>agg</li>
+    <li>agg_<i>x</i></li>
+    <li>avg</li>
+    <li>min / max</li>
+    <li>centroid</li>
+    <li>all</li>
+  </ul>
+
+  <h2>Aggregation</h2>
+</section>
+
+<section class="chapter">
+  <h1 class="orange">Quality</h1>
+  <h1 class="purple" style="top:280px">Speed</h1>
+  <h1 class="green" style="top:400px">Cost</h1>
+</section>
+
+<section>
+  <h1 class="orange">Quality</h1>
+  <h2>Gold, peer review, and trust</h2>
+</section>
+
+<section>
+  <img src="gold.png" class="shadow"/>
+  <h2 style="bottom:40px">Gold</h2>
+</section>
+
+<section>
+  <img src="missed.png" class="shadow"/>
+  <h2 style="bottom:40px">Training and Feedback</h2>
+</section>
+
+<section>
+  <img src="backpain.png" class="shadow"/>
+  <h2>Open-ended tasks</h2>
+</section>
+
+<section>
+  <img src="peer.png" class="shadow"/>
+  <h2>Peer review</h2>
+</section>
+
+<section>
+  <img src="trust.png" class="shadow"/>
+  <h2>Trust</h2>
+</section>
+
+<section>
+  <h1>Contributor <span class="orange">agreement</span> weighted by <span class="green">trust</span></h1>
+  <h2>Confidence</h2>
+</section>
+
+<section>
+  <h1 class="green">Cost</h1>
+  <h2>The Microtask marketplace</h2>
+</section>
+
+<section>
+  <img src="tasks.png" class="shadow"/>
+  <h2>Competition</h2>
+</section>
+
+<section>
+  <ul>
+    <li>Historic performance</li>
+    <li>Type specific profiles
+      <ul>
+        <li>good at <span class="green">reviewing</span> content</li>
+        <li>good at <span class="green">searching</span> the web</li>
+        <li>etc...</li>
+      </ul>
+    </li>
+    <li>Demographic information</li>
+  </ul>
+  <h2>Profiles</h2>
+</section>
+
+<section>
+  <img src="bonus.png" class="shadow" />
+  <h2>Bonuses</h2>
+</section>
+
+<section>
+  <h1 class="purple">Speed</h1>
+  <h2>Channels, elastic supply</h2>
+</section>
+
+<section style="background:url(swagbucks.png)">
+  <h2 class="shadow">Virtual Marketplaces</h2>
+</section>
+
+<section style="background:url(embee.png)">
+  <h2 class="shadow">Cellphone minutes</h2>
+</section>
+
+<section style="background:url(cityville.png)">
+  <h2 class="shadow">In-Game Virtual Currency</h2>
+</section>
+
+<section>
+  <img src="jph.png" class="shadow" />
+  <h2>Elastic supply</h2>
+</section>
+
+<section id="map">
+  <h2 id="judgments" class="shadow blue">0</h2>
+</section>
+
+<section>
+  <h1>The Future</h1>
+  <h2>Apps</h2>
+</section>
+
+<section style="background:url(rtfm.png)">
+</section>
+
+<section style="background:url(senti.png)">
+</section>
+
+<section class="chapter">
+  <h1 class="pink">Thanks!</h1>
+  <h2><a href="http://vanpe.lt">Chris Van Pelt</a><div class="grey">@vanpelt {<a class="white" href="http://crowdflower.com/">crowdflower.com</a>, <a href="mailto:vanpelt@crowdflower.com">vanpelt@crowdflower.com</a>}</div></h2>
+</section>
+
+<script src="stack.v0.js"></script>
+<script src="highlight.v0.js"></script>
+
+<!-- Polymaps -->
+<script src="http://crowdflower.com/javascripts/bundles/mootools.js"></script>
+<script src="polymaps.js"></script>
+<script src="http://crowdflower.com/javascripts/milkshake/lib/polymaps/kmeans.js"></script>
+<script src="http://js.pusherapp.com/1.7/pusher.min.js"></script>
+<script src="poly.js"></script>

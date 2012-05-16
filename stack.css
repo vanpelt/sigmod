@@ -1,0 +1,248 @@
+body {
+  background: #929292;
+  font: 36px "Helvetica Neue";
+  text-rendering: optimizeLegibility;
+  margin: auto;
+  width: 1280px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  border-bottom: dotted 1px #969696;
+}
+
+.stack {
+  border: solid 1px #000;
+  box-shadow: 0px 4px 8px rgba(0,0,0,.5);
+  background: #2D2D2D url(crowdflower.png) 98% 98% no-repeat;
+  color: #fff;
+  display: none;
+  height: 560px;
+  overflow: hidden;
+  padding: 80px;
+  position: relative;
+  width: 1120px;
+}
+
+#map {
+  padding:0;
+  width: 1280px;
+  height: 720px;
+}
+
+#judgments {
+  padding-left:80px;
+}
+
+section aside {
+  background: #FFF8B8;
+  background-image: -webkit-linear-gradient(top, #FFF8B8, #FEED77);
+  box-shadow: 0 8px 16px rgba(0,0,0,.5);
+  color: #000;
+  display: block;
+  font-size: 16px;
+  padding: 16px;
+  position: absolute;
+  right: 40px;
+  bottom: 120px;
+  width: 328px;
+  -o-transform: rotate(-1deg);
+  -ms-transform: rotate(-1deg);
+  -moz-transform: rotate(-1deg);
+  -webkit-transform: rotate(-1deg);
+  -o-transition: opacity 100ms linear;
+  -ms-transition: opacity 100ms linear;
+  -moz-transition: opacity 100ms linear;
+  -webkit-transition: opacity 100ms linear;
+}
+
+section aside p:last-child {
+  margin-bottom: 0;
+}
+
+section aside:hover {
+  opacity: .5;
+}
+
+section:nth-child(odd) aside {
+  -o-transform: rotate(1deg);
+  -ms-transform: rotate(1deg);
+  -moz-transform: rotate(1deg);
+  -webkit-transform: rotate(1deg);
+}
+
+.stack.chapter {
+  background: #1D1D1D;
+}
+
+.active {
+  display: block;
+  position: fixed;
+}
+
+h1, h2, h3, h4 {
+  position: absolute;
+  font-family: "Chau Philomene One";
+  line-height: 1em;
+  margin: 0;
+}
+
+h1 {
+  font-size: 110px;
+  top: 160px;
+  width: 1120px;
+}
+
+h1.double {
+  top: 80px;
+}
+
+h2 {
+  font-size:50px;
+  bottom: 80px;
+  line-height:80px;
+}
+
+.shadow {
+  text-shadow: 0px 4px 8px rgba(0,0,0,.5);
+  -webkit-text-stroke: #000 1px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+span.mcd {
+  text-indent:-9999px;
+  position:relative;
+  height:75px;
+  width:75px;
+  margin-right:-5px;
+  display:inline-block;
+  background:url(mcd.png) no-repeat;
+}
+
+img.shadow {
+  box-shadow: 0 8px 16px rgba(0,0,0,.5);
+}
+
+ul, pre {
+  margin: 0;
+}
+
+li {
+  margin-left:20px;
+  font-family: "Chau Philomene One";
+  font-size:110%;
+}
+
+pre, code {
+  font-family: "Menlo", monospace;
+}
+
+pre {
+  font-size: 32px;
+}
+
+span.updown {
+  position:absolute;
+  font-size: 100px;
+  top:300px;
+  left:150px;
+}
+
+img {
+  display:block;
+  margin:auto;
+}
+
+q:before,
+blockquote:before {
+  content: "â€œ";
+}
+
+q:after,
+blockquote:after {
+  content: "â€";
+}
+
+q.nogap:after {
+  position: absolute;
+}
+
+.purple,
+.html .value,
+.javascript .string,
+.javascript .regexp {
+  color: #9e9ac8;
+}
+
+.blue,
+.html .tag,
+.css .tag,
+.javascript .keyword {
+  color: #6baed6;
+}
+
+.grey,
+.comment {
+  color: #969696;
+}
+
+.green,
+.html .doctype,
+.javascript .number {
+  color: #74c476;
+}
+
+.orange,
+.html .attribute,
+.css .attribute,
+.javascript .class,
+.javascript .special {
+  color: #fd8d3c;
+}
+
+.highlight {
+  background: #636363;
+}
+
+.pink {
+  color: #e377c2;
+}
+
+.white {
+  color: #fff;
+}
+
+.black {
+  color: #333;
+}
+
+.wall {
+  display: block;
+  height: 490px;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+/*
+  "#3182bd", "#6baed6", "#9ecae1", "#c6dbef",
+  "#e6550d", "#fd8d3c", "#fdae6b", "#fdd0a2",
+  "#31a354", "#74c476", "#a1d99b", "#c7e9c0",
+  "#756bb1", "#9e9ac8", "#bcbddc", "#dadaeb",
+  "#636363", "#969696", "#bdbdbd", "#d9d9d9"
+*/
+
+@media
+screen and (-webkit-min-device-pixel-ratio: 2),
+screen and (min-device-width: 768px) and (max-device-width: 1024px),
+screen and (max-device-width: 480px) {
+  .stack {
+    display: block;
+    box-shadow: none;
+    margin-bottom: 40px;
+    -webkit-transform: none;
+  }
+}
