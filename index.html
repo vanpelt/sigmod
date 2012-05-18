@@ -100,7 +100,7 @@
   <pre><code class="html">
 &lt;img src="{{url}}" /&gt;
 &lt;cml:checkbox label="Is the image appropriate?" 
-  default="no" value="yes" validates="required" /&gt;
+  default="no" value="yes" /&gt;
   </code></pre>
   <span class="updown">↳</span>
   <img src="appropriate.png" class="shadow" />
@@ -111,7 +111,7 @@
   <pre><code class="html">
 &lt;img src="{{url}}" /&gt;
 &lt;cml:ratings label="How attractive is this young man" 
-  from="Hot" to="Not" /&gt;
+  from="Hot" to="Not" validates="required" golden="true" /&gt;
   </code></pre>
   <span class="updown">↳</span>
   <img src="attractive.png" class="shadow" />
